@@ -1,31 +1,31 @@
-#include <stdio.h>
+#include<stdio.h>
 
-const int MAX = 10000000;
-
-char v[10000003];
-int p[664583];
-
-void sieve(int N) {
-  int M = 0;
-  for (int i = 2; i <= N; ++i) {
-    if(!v[i]) p[++M] = i;
-    for(int j = 1; j <= M && i * p[j] <= N; ++j) {
-      v[i * p[j]] = 1;
-      if(i % p[j] == 0) break;
-    }
-  }
+int Pow(int b, int p, int m) {
+  int s = 1 % m;
+  b %= m;
+  for(; p; p >>= 1, b = 1ll * b * b % m)
+    if(p & 1) s = 1ll * s * b % m;
+  return s;
 }
 
-int isPrime(int x) {
-  if (x <= MAX)
-    return !v[x];
-  else
-    return 0;
+int MR(int x, int b) {
+  if(Pow(b, x - 1, x) != 1) return 0;
+  int k = x - 1;
+  while(!(k & 1)) {
+    k >>= 1;
+    int d = Pow(b, k, x);
+    if(d == x - 1) return 1;
+    if(d != 1) return 0;
+  }
+  return 1;
+}
+
+int MR(int x) {
+  if(x == 2 || x == 3 || x == 7 || x == 61 || x == 24251) return 1;
+  return MR(x, 2) && MR(x, 3) && MR(x, 7) && MR(x, 61) && MR(x, 24251);
 }
 
 int main() {
-  sieve(MAX);
-
   int T;
   scanf("%d", &T);
   for (int x, ans; T; --T) {
@@ -34,7 +34,7 @@ int main() {
     for (; ; ) {
       scanf("%d", &x);
       if (!~x) break;
-      ans += isPrime(x);
+      ans += MR(x);
     }
 
     printf("%d\n", ans);
