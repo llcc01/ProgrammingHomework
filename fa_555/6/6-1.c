@@ -9,7 +9,7 @@ int main() {
 
   scanf("%d%d", &m, &n);
   g = gcd(m, n);
-  printf("%d %lld\n", g, m / g * n);
+  printf("%d %d\n", g, m / g * n);
   return 0;
 }
 
