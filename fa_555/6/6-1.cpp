@@ -8,6 +8,6 @@ int main() {
 
   std::cin >> m >> n;
   g = std::gcd(m, n);
-  std::cout << g << ' ' << 1ll * m * n / g << '\n';
+  std::cout << g << ' ' << m / g * n << '\n';
   return 0;
 }
