@@ -22,13 +22,16 @@ int isPrime(int num)
     return 1;
 }
 
-void printFactor(int a, int b){
+void printFactor(int a, int b)
+{
     if(b == 1){
         printf("%d=", a);
         b = b + 1;
     }
     if(a == b){
         printf("%d\n", b);
+    }else if(isPrime(a) == 1){
+        printf("%d\n", a);
     }else{
         if(a % b == 0){
             printf("%d*", b);
@@ -42,4 +45,3 @@ void printFactor(int a, int b){
         }
     }
 }
-
