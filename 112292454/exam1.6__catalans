@@ -1,5 +1,4 @@
 #include<stdio.h>    
-//写完其他题一看题解，草，卡塔兰数啊原来，即刻复制粘贴
     int* c=new int[33];
     int tree(int n){
         int th=0;
