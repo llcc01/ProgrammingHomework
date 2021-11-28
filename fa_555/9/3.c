@@ -12,7 +12,7 @@ int main() {
     if (z[i] % 2 == 1)
       s[++M] = z[i];
   for (int i = 1; i <= M; ++i)
-    printf("%d%c", s[i], " \n"[i == N]);
+    printf("%d%c", s[i], " \n"[i == M]);
   return 0;
 }
 
