@@ -19,3 +19,4 @@ int main() {
     printf("%d%c", a[i - 1], " \n"[i == N]);
   return 0;
 }
+

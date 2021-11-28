@@ -11,13 +11,13 @@ int main() {
     if (b[M] == -1) break;
   }
   for (int i = 0; i <= N - M; ++i) {
-    for (int j = 0; j <= M; ++j) {
-      if (j == M) {
+    for (int j = 0; j < M; ++j) {
+      if (a[i + j] != b[j])
+        break;
+      if (j == M - 1) {
         puts("ListB is the sub sequence of ListA.");
         return 0;
       }
-      if (a[i + j] != b[j])
-        break;
     }
   }
   puts("ListB is not the sub sequence of ListA.");
