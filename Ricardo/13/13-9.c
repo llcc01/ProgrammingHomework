@@ -15,6 +15,7 @@ int main(void)
     char *p = &string;
 
     scanf("%d", &num);
+    getchar();
     string_array = malloc(sizeof(char *) * num);
     if (string_array == NULL)
     {
@@ -39,11 +40,6 @@ int main(void)
             *p = temp;
         }
         p++;
-    }
-    //为啥这里会多读一个莫名奇妙的地址在数组的第一位
-    for (int i = 0; i < num; i++)
-    {
-        string_array[i] = string_array[i + 1];
     }
     sort(string_array, num);
     for (int i = 0; i < num; i++)
