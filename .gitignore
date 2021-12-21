@@ -58,3 +58,5 @@ dkms.conf
 
 # File used to test
 test.c
+out
+
