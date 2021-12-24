@@ -17,7 +17,7 @@ int main()
     for (i = 0; i < n; i++)
     {
         scanf("%d", &cmd);
-        scanf("%d", &op_id);
+        scanf("%ld", &op_id);
         for (j = 0; j < sn; j++)
         {
             if (s[j].id == op_id)
