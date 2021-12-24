@@ -54,4 +54,9 @@ Mkfile.old
 dkms.conf
 
 # VSCode JSON
-.vscode
+.vscode/
+
+# File used to test
+test.c
+out
+
